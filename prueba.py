@@ -1,18 +1,37 @@
-def tomar_nombre():
-    nombre_usuario = input("nombre del usuario")
-    return nombre_usuario
+class saludo:
+#Metodo constructor
+#Se usa para inicializar obj
 
-def fecha(dato_fecha):
-    aux = 2025 - dato_fecha
-    print("la edad del usuario" + str(aux))
+def __init__(self, dato_texto):
+self.mensaje= dato_texto
+print(self.mensaje)
 
-    def imprimir():
-        print("fin de modulo......")
+def tomar_nombre(self):
+nombre_usuario=input("Escribe el nombre del usuario: ")
+return nombre_usuario
 
-    #zona de codigo principal
+def hacer_mensaje(self, dato_usuario):
+self.mensaje = "Hola usuario "+dato_usuario
+self.imprimir_mensaje(self.mensaje)
 
-    dato_nombre = tomar_nombre()
-    print("nombre del usuario: " + dato_nombre )
+def imprimir_mensaje(self, mensaje):
+print(mensaje)
 
-    dato_fecha = 2006
-    fecha(dato_fecha)
+#Getter
+def get_mensaje(self):
+return self.mensaje
+
+#Setter
+def set_atributo(self, dato_nuevo_mensaje):
+self.mensaje = dato_nuevo_mensaje
+
+
+#***************************** Codigo principal *************************************
+
+texto= "Hola Usuario"
+#Se crea una instancia de saludo, con el constructor (que no es obligatorio siempre)
+obj_mensaje = saludo(texto)
+#Se usa un metodo de la clase saludo
+nombre_usuario = obj_mensaje.tomar_nombre()
+#Metodo de funcion anidada que imprime mensaje
+obj_mensaje.hacer_mensaje(nombre_usuario)
